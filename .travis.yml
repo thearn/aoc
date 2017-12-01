@@ -8,7 +8,6 @@ notifications:
 
 install:
   # stick with stdlib + nose for now, keep option open for conda below
-  - pip install nose parameterized
   # set up basic conda env via miniconda
   # - sudo apt-get update
   # - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
@@ -28,4 +27,4 @@ install:
 
 script:
   # run unit test suite
-  - nosetests .
+  - pytest .
