@@ -24,6 +24,7 @@ install:
   # - conda info -a
   # install deps
   # - conda install nose numpy
+  # pip install parameterized
 
 script:
   # run unit test suite
