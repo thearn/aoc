@@ -21,8 +21,8 @@ install:
   - conda update -q conda
   - conda info -a
   # install deps
-  - conda install numpy
+  - conda install numpy nose
 
 script:
   # run unit test suite
-  - pytest .
+  - nosetests .
