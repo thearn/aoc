@@ -1,0 +1,7 @@
+*.pyc
+.cache
+*~
+.DS_Store
+.dropbox
+pycycle.egg-info/*
+*__pycache__*
