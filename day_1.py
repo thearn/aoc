@@ -72,4 +72,4 @@ if __name__ == '__main__':
     print("Day 1.2 solution:", day_1_part_2(main_inp))
 
     # run verification tests
-    pytest.main()
+    pytest.main([__file__])

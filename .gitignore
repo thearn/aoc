@@ -6,3 +6,4 @@
 pycycle.egg-info/*
 *__pycache__*
 _template.py
+_playground.py
