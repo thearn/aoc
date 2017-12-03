@@ -23,11 +23,11 @@ def day_2_part_2(n):
 
 
 @pytest.mark.skip(reason='Not completed yet.')
-@pytest.mark.parametrize('inp, expected, method', [
+@pytest.mark.parametrize('method, inp, expected', [
     (day_2_part_1, 0, 0),
     (day_2_part_2, 0, 0),
 ])
-def test_day_2_cases(inp, expected, method):
+def test_day_2_cases(method, inp, expected):
     """Test both parts."""
     assert method(inp) == expected
 
