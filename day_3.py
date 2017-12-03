@@ -11,14 +11,14 @@ def day_3_part_1(target):
     if target == 1:
         return 0
 
-    # target ring level
+    # target specific spiral level
     n = int(sqrt(target) - 1) // 2 + 1
     corner = (2*n + 1)**2
 
     # find closest corner
     while corner >= target:
         corner += -2*n
-    # back off to 2nd to last corner in ring level
+    # back off to 2nd to last corner in this spiral level
     corner += 2*n
 
     # compute L1 distance to origin
@@ -45,40 +45,45 @@ def test_day_3part_1_cases(inp, expected):
 # ------ Part 2
 
 def day_3_part_2(target):
+    # seems easiest to build a sufficiently large data structure in-place
     n = 100
-    A = np.zeros((n, n))
+    A = np.zeros((n, n), dtype=np.uint64)
 
-    def sum(A, a, b):
-        result = 0
-        for i, j in itertools.product([-1, 0, 1], [-1, 0, 1]):
-            result += A[a + i, b + j]
-        return result
+    stencil = np.ones((3,3), dtype=np.uint8)
 
+    # start from center
     a, b = n//2, n//2
     A[a, b] = 1
 
-    for k in range(1, 50):
+    # search for target value
+    for k in range(1, n//2):
+        # build spiral of indices at each level of the spiral
+        idx = []
         a, b = a, b + 1
-        A[a, b] = sum(A, a, b)
+        idx.append([a, b])
 
+        # queue up all locations in array to be set
         width = 2*k + 1
         for i in range(width - 2):
             a, b = a - 1, b
-            A[a, b] = sum(A, a, b)
+            idx.append([a, b])
         for i in range(width - 1):
             a, b = a, b - 1
-            A[a, b] = sum(A, a, b)
+            idx.append([a, b])
         for i in range(width - 1):
             a, b = a + 1, b
-            A[a, b] = sum(A, a, b)
+            idx.append([a, b])
         for i in range(width - 1):
             a, b = a, b + 1
-            A[a, b] = sum(A, a, b)
+            idx.append([a, b])
 
-        if A.max() > target:
-            A = np.sort(A.flatten())
-            idx = np.searchsorted(A, target)
-            return int(A[idx])
+        # sequence is successive application of 2D convolutions
+        # not most efficient, but hey its terse
+        for a, b in idx:
+            value = (stencil * A[a - 1 : a + 2, b - 1 : b + 2]).sum()
+            if value > target:
+                return value
+            A[a, b] = value
 
 
 @pytest.mark.parametrize("inp,expected", [
