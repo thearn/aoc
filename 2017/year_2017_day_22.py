@@ -1,4 +1,4 @@
-"""Day 2: 'title' https://adventofcode.com/2017/day/2."""
+"""Day 22: 'title' https://adventofcode.com/2017/day/22."""
 
 import pytest
 
@@ -6,7 +6,7 @@ import pytest
 # Part 1 ---------------------------------
 
 
-def day_2_part_1(n):
+def day_22_2017_part_1(n):
     """Part 1."""
     return 0
 
@@ -14,7 +14,7 @@ def day_2_part_1(n):
 # Part 2 --------------------------------
 
 
-def day_2_part_2(n):
+def day_22_2017_part_2(n):
     """Part 2."""
     return 0
 
@@ -24,8 +24,8 @@ def day_2_part_2(n):
 
 @pytest.mark.skip(reason='Not completed yet.')
 @pytest.mark.parametrize('inp, expected, method', [
-    (day_2_part_1, 0, 0),
-    (day_2_part_2, 0, 0),
+    (day_22_2017_part_1, 0, 0),
+    (day_22_2017_part_2, 0, 0),
 ])
 def test_day_2_cases(inp, expected, method):
     """Test both parts."""
@@ -35,8 +35,8 @@ def test_day_2_cases(inp, expected, method):
 if __name__ == '__main__':
     # show solution
     main_inp = 0
-    print('day_2_part_1 solution:', day_2_part_1(main_inp))
-    print('day_2_part_2 solution:', day_2_part_2(main_inp))
+    print('day_22_2017_part_1 solution:', day_22_2017_part_1(main_inp))
+    print('day_22_2017_part_2 solution:', day_22_2017_part_2(main_inp))
 
     # run verification tests
     pytest.main(['-x', '-l', __file__])

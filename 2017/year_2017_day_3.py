@@ -6,6 +6,9 @@ import numpy as np
 import pytest
 
 
+# ------------- Part 1
+
+
 def day_3_2017_part_1(target):
     # base case
     if target == 1:
@@ -31,18 +34,8 @@ def day_3_2017_part_1(target):
     return L1_norm
 
 
-@pytest.mark.parametrize("inp,expected", [
-    (1, 0),
-    (12, 3),
-    (23, 2),
-    (1024, 31),
-])
-def test_day_3_2017part_1_cases(inp, expected):
-    computed = day_3_2017_part_1(inp)
-    assert computed == expected
+# ------------- Part 2
 
-
-# ------ Part 2
 
 def day_3_2017_part_2(target):
     # seems easiest to build a sufficiently large data structure in-place
@@ -86,20 +79,27 @@ def day_3_2017_part_2(target):
             A[a, b] = value
 
 
-@pytest.mark.parametrize("inp,expected", [
-    (130, 133),
-    (200, 304),
+# Tests ----------------------------------------------
+
+
+@pytest.mark.parametrize("method, inp, expected", [
+    (day_3_2017_part_1, 1, 0),
+    (day_3_2017_part_1, 12, 3),
+    (day_3_2017_part_1, 23, 2),
+    (day_3_2017_part_1, 1024, 31),
+
+    (day_3_2017_part_2, 130, 133),
+    (day_3_2017_part_2, 200, 304),
 ])
-def test_day_3_2017part_2_cases(inp, expected):
-    computed = day_3_2017_part_2(inp)
-    assert computed == expected
+def test_day_3_2017_cases(method, inp, expected):
+    assert method(inp) == expected
 
 
 if __name__ == '__main__':
     # show solution
     main_inp = 265149
-    print("Day 3.1 solution:", day_3_2017_part_1(main_inp))
-    print("Day 3.2 solution:", day_3_2017_part_2(main_inp))
+    print("day_3_2017_part_1 solution:", day_3_2017_part_1(main_inp))
+    print("day_3_2017_part_2 solution:", day_3_2017_part_2(main_inp))
 
     # run verification tests
-    pytest.main([__file__])
+    pytest.main(['-x', '-l', __file__])
