@@ -4,7 +4,6 @@ import pytest
 
 
 def day_1_part_1(n):
-    """Day 1: 'Inverse Captcha' https://adventofcode.com/2017/day/1."""
     duplicate_digits = []
 
     digits = list(str(n))
