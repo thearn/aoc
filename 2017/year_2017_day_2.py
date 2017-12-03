@@ -2,7 +2,7 @@
 
 import pytest
 
-def day_2_part_1(n):
+def day_2_2017_part_1(n):
     """
     Day 2: 'Corruption Checksum' https://adventofcode.com/2017/day/2.
     Part 1.
@@ -22,8 +22,8 @@ test1 = """5 1 9 5
 @pytest.mark.parametrize("inp,expected", [
     (test1, 18),
 ])
-def test_day_2part_1_cases(inp, expected):
-    computed = day_2_part_1(inp)
+def test_day_2_2017part_1_cases(inp, expected):
+    computed = day_2_2017_part_1(inp)
     assert computed == expected
 
 
@@ -31,7 +31,7 @@ def test_day_2part_1_cases(inp, expected):
 
 gcd = lambda m, n : m if not n else gcd(n, m%n)
 
-def day_2_part_2(n):
+def day_2_2017_part_2(n):
     """
     Day 2: 'Corruption Checksum' https://adventofcode.com/2017/day/2.
     Part 2
@@ -58,8 +58,8 @@ test2 = """5 9 2 8
 @pytest.mark.parametrize("inp,expected", [
     (test2, 9),
 ])
-def test_day_2part_2_cases(inp, expected):
-    computed = day_2_part_2(inp)
+def test_day_2_2017part_2_cases(inp, expected):
+    computed = day_2_2017_part_2(inp)
     assert computed == expected
 
 
@@ -83,8 +83,8 @@ if __name__ == '__main__':
 2610    1290    204 2265    1374    2581    185 852 207 175 3308    1500    2898    1120    1892    3074
 2322    1434    301 2156    98  2194    587 1416    1521    94  1985    424 91  119 1869    1073
 66  87  176 107 2791    109 21  92  3016    2239    1708    3175    3210    2842    446 484"""
-    print("Day 2.1 solution :", day_2_part_1(main_inp))
-    print("Day 2.2 solution :", day_2_part_2(main_inp))
+    print("Day 2.1 solution :", day_2_2017_part_1(main_inp))
+    print("Day 2.2 solution :", day_2_2017_part_2(main_inp))
 
     # run verification tests
     pytest.main([__file__])

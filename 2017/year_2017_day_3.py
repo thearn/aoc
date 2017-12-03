@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 
 
-def day_3_part_1(target):
+def day_3_2017_part_1(target):
     # base case
     if target == 1:
         return 0
@@ -37,14 +37,14 @@ def day_3_part_1(target):
     (23, 2),
     (1024, 31),
 ])
-def test_day_3part_1_cases(inp, expected):
-    computed = day_3_part_1(inp)
+def test_day_3_2017part_1_cases(inp, expected):
+    computed = day_3_2017_part_1(inp)
     assert computed == expected
 
 
 # ------ Part 2
 
-def day_3_part_2(target):
+def day_3_2017_part_2(target):
     # seems easiest to build a sufficiently large data structure in-place
     n = 100
     A = np.zeros((n, n), dtype=np.uint64)
@@ -90,16 +90,16 @@ def day_3_part_2(target):
     (130, 133),
     (200, 304),
 ])
-def test_day_3part_2_cases(inp, expected):
-    computed = day_3_part_2(inp)
+def test_day_3_2017part_2_cases(inp, expected):
+    computed = day_3_2017_part_2(inp)
     assert computed == expected
 
 
 if __name__ == '__main__':
     # show solution
     main_inp = 265149
-    print("Day 3.1 solution:", day_3_part_1(main_inp))
-    print("Day 3.2 solution:", day_3_part_2(main_inp))
+    print("Day 3.1 solution:", day_3_2017_part_1(main_inp))
+    print("Day 3.2 solution:", day_3_2017_part_2(main_inp))
 
     # run verification tests
     pytest.main([__file__])
