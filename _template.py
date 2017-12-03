@@ -10,12 +10,11 @@ def day_2_part_1(n):
 
 
 @pytest.mark.skip(reason='Not completed yet.')
-@pytest.mark.parametrize('inp,expected', [
+@pytest.mark.parametrize('inp, expected', [
     (0, 0),
 ])
 def test_day_2_part_1_cases(inp, expected):
-    computed = day_2_part_2(inp)
-    assert computed == expected
+    assert day_2_part_2(inp) == expected
 
 
 # Part 2 --------------------------------
@@ -25,12 +24,11 @@ def day_2_part_2(n):
 
 
 @pytest.mark.skip(reason='Not completed yet.')
-@pytest.mark.parametrize('inp,expected', [
+@pytest.mark.parametrize('inp, expected', [
     (0, 0),
 ])
 def test_day_2_part_2_cases(inp, expected):
-    computed = day_2_part_2(inp)
-    assert computed == expected
+    assert day_2_part_2(inp) == expected
 
 
 
