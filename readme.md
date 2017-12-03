@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/thearn/aoc2017.svg?branch=master)](https://travis-ci.org/thearn/aoc2017)
+[![Build Status](https://travis-ci.org/thearn/aoc.svg?branch=master)](https://travis-ci.org/thearn/aoc)
 
-Advent of code 2017
+Advent of code
 -------------------
-Mostly Python. Might go polyglot though.
+Solutions to problems, mostly in Python.
