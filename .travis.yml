@@ -6,5 +6,8 @@ python:
 notifications:
   email: false
 
+install:
+  - pip install numpy
+
 script:
   - pytest .
