@@ -6,3 +6,5 @@
 pycycle.egg-info/*
 *__pycache__*
 _playground.py
+.coverage
+generate.py

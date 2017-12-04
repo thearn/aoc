@@ -1030,7 +1030,6 @@ def day_2_2015_part_2(dimensions):
 # Tests ---------------------------------
 
 
-#@pytest.mark.skip(reason='Not completed yet.')
 @pytest.mark.parametrize('method, inp, expected', [
     (day_2_2015_part_1, '2x3x4', 58),
     (day_2_2015_part_1, '1x1x10', 43),
