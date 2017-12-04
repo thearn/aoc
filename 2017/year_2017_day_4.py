@@ -1,4 +1,4 @@
-"""Day 4: 'title' https://adventofcode.com/2017/day/4."""
+"""Day 4: 'High-Entropy Passphrases' https://adventofcode.com/2017/day/4."""
 
 import pytest
 
