@@ -1,6 +1,6 @@
 import os, shutil
 
-year, day = 2016, 1
+year, day = 2017, 4
 
 orig = '_template.py'
 dst = '%d/year_%d_day_%d.py' % (year, year, day)
