@@ -1951,7 +1951,7 @@ def day_3_2016_part_2():
 @pytest.mark.parametrize('method, inp, expected', [
     (day_3_2016_part_1, '5 10 25', False),
 ])
-def test_day_2_cases(method, inp, expected):
+def test_day_3_2016_cases(method, inp, expected):
     """Test both parts."""
     assert method(inp) == expected
 

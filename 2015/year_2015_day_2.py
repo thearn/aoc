@@ -1037,7 +1037,7 @@ def day_2_2015_part_2(dimensions):
     (day_2_2015_part_2, '2x3x4', 34),
     (day_2_2015_part_2, '1x1x10', 14),
 ])
-def test_day_2_cases(method, inp, expected):
+def test_day_2_2015_cases(method, inp, expected):
     """Test both parts."""
     assert method(inp) == expected
 

@@ -1094,7 +1094,7 @@ test_1 = """0
     (day_5_2017_part_1, test_1, 5),
     (day_5_2017_part_2, test_1, 10),
 ])
-def test_day_2_cases(method, inp, expected):
+def test_day_5_2017_cases(method, inp, expected):
     """Test both parts."""
     assert method(inp) == expected
 

@@ -72,7 +72,7 @@ UUUUD"""
     (day_2_2016_part_1, test1, 1985),
     (day_2_2016_part_2, test1, '5DB3'),
 ])
-def test_day_2_cases(method, inp, expected):
+def test_day_2__2016_cases(method, inp, expected):
     """Test both parts."""
     assert method(inp) == expected
 

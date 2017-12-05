@@ -58,7 +58,7 @@ def day_1_2016_part_2(seq):
     (day_1_2016_part_1, 'R5, L5, R5, R3', 12),
     (day_1_2016_part_2, 'R8, R4, R4, R8', 4),
 ])
-def test_day_2_cases(method, inp, expected):
+def test_day_1_2016_cases(method, inp, expected):
     """Test both parts."""
     assert method(inp) == expected
 

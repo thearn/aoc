@@ -58,7 +58,7 @@ def day_3_2015_part_2(path):
     (day_3_2015_part_2, '^>v<', 3),
     (day_3_2015_part_2, '^v^v^v^v^v', 11),
 ])
-def test_day_2_cases(method, inp, expected):
+def test_day_3_2015_cases(method, inp, expected):
     """Test both parts."""
     assert method(inp) == expected
 

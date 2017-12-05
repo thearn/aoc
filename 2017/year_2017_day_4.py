@@ -553,7 +553,7 @@ def day_4_2017_part_2(seq):
     (day_4_2017_part_2, 'iiii oiii ooii oooi oooo', True),
     (day_4_2017_part_2, 'oiii ioii iioi iiio', False),
 ])
-def test_day_2_cases(method, inp, expected):
+def test_day_4_2017_cases(method, inp, expected):
     """Test both parts."""
     assert method(inp) == expected
 

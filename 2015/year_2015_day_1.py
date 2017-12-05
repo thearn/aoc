@@ -45,7 +45,7 @@ def day_1_2017_part_2(seq):
     (')', 1),
     ('()())', 5),
 ])
-def test_day_2part_2_cases(inp, expected):
+def test_day_1_2015_cases(inp, expected):
     computed = day_1_2017_part_2(inp)
     assert computed == expected
 
