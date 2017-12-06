@@ -60,10 +60,12 @@ def day_6_2017_part_2(config):
         steps += 1
 
 
-
 # Tests ---------------------------------
 
+
 test_1 = '0 2 7 0'
+
+
 @pytest.mark.parametrize('method, inp, expected', [
     (day_6_2017_part_1, test_1, 5),
     (day_6_2017_part_2, test_1, 4),

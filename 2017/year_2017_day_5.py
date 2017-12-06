@@ -1057,7 +1057,6 @@ def day_5_2017_part_1(instructions):
     return steps_taken
 
 
-
 # Part 2 --------------------------------
 
 
@@ -1090,6 +1089,8 @@ test_1 = """0
 0
 1
 -3"""
+
+
 @pytest.mark.parametrize('method, inp, expected', [
     (day_5_2017_part_1, test_1, 5),
     (day_5_2017_part_2, test_1, 10),

@@ -1010,9 +1010,9 @@ def day_2_2015_part_1(dimensions):
     """Part 1."""
     l, w, h = [int(i) for i in dimensions.split('x')]
 
-    sides = [2*l*w, 2*l*h, 2*h*w]
+    sides = [2 * l * w, 2 * l * h, 2 * h * w]
 
-    return int(sum(sides) + min(sides)/2.0)
+    return int(sum(sides) + min(sides) / 2.0)
 
 
 # Part 2 --------------------------------
@@ -1022,7 +1022,7 @@ def day_2_2015_part_2(dimensions):
     """Part 2."""
     l, w, h = [int(i) for i in dimensions.split('x')]
     volume = l * w * h
-    face_perims = [2*(l + w), 2*(l + h), 2*(h + w)]
+    face_perims = [2 * (l + w), 2 * (l + h), 2 * (h + w)]
 
     return volume + min(face_perims)
 

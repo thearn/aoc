@@ -14,10 +14,10 @@ def day_3_2015_part_1(path):
     position = 0 + 0j
     visited = defaultdict(int)
     visited[position] += 1
-    directions = {'^' : 1j,
-             'v' : -1j,
-             '>' : 1,
-             '<' : -1}
+    directions = {'^': 1j,
+                  'v': -1j,
+                  '>': 1,
+                  '<': -1}
     for step in path:
         position += directions[step]
         visited[position] += 1
@@ -33,15 +33,15 @@ def day_3_2015_part_2(path):
     position_robo = 0 + 0j
     visited = defaultdict(int)
     visited[position_santa] += 1
-    directions = {'^' : 1j,
-             'v' : -1j,
-             '>' : 1,
-             '<' : -1}
-    for i in range(len(path)//2):
-        position_santa += directions[path[2*i]]
+    directions = {'^': 1j,
+                  'v': -1j,
+                  '>': 1,
+                  '<': -1}
+    for i in range(len(path) // 2):
+        position_santa += directions[path[2 * i]]
         visited[position_santa] += 1
 
-        position_robo += directions[path[2*i + 1]]
+        position_robo += directions[path[2 * i + 1]]
         visited[position_robo] += 1
     return len(visited.keys())
 

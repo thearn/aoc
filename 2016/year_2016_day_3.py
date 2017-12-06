@@ -1940,7 +1940,7 @@ def day_3_2016_part_2():
 
     triangles = []
     for t in [t1, t2, t3]:
-        triangles += [' '.join(t[i : i + 3]) for i in range(0, len(t), 3)]
+        triangles += [' '.join(t[i: i + 3]) for i in range(0, len(t), 3)]
     return sum([1 for t in triangles if day_3_2016_part_1(t)])
 
 
@@ -1958,7 +1958,8 @@ def test_day_3_2016_cases(method, inp, expected):
 
 if __name__ == '__main__':
     # show solution
-    valid = [1 for triangle in main_inp.split('\n') if day_3_2016_part_1(triangle)]
+    valid = [1 for triangle in main_inp.split(
+        '\n') if day_3_2016_part_1(triangle)]
     print('day_3_2016_part_1 solution:', sum(valid))
     print('day_3_2016_part_2 solution:', day_3_2016_part_2())
 

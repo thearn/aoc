@@ -20,10 +20,11 @@ def day_2_2017_part_1(n):
     return checksum
 
 
-
 # Part 2 ----------------------------------------------
 
-gcd = lambda m, n : m if not n else gcd(n, m%n)
+
+def gcd(m, n): return m if not n else gcd(n, m % n)
+
 
 def day_2_2017_part_2(n):
     """
@@ -54,13 +55,14 @@ test1 = """5 1 9 5
 test2 = """5 9 2 8
 9 4 7 3
 3 8 6 5"""
+
+
 @pytest.mark.parametrize("method, inp, expected", [
     (day_2_2017_part_1, test1, 18),
     (day_2_2017_part_2, test2, 9),
 ])
 def test_day_2_2017_cases(method, inp, expected):
     assert method(inp) == expected
-
 
 
 if __name__ == '__main__':

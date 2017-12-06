@@ -16,10 +16,10 @@ def day_2_2016_part_1(seq):
     """Part 1."""
     lines = seq.split("\n")
     keypad = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
-    paths = {'R' : np.array([0, 1]),
-             'L' : np.array([0, -1]),
-             'U' : np.array([-1, 0]),
-             'D' : np.array([1, 0]),
+    paths = {'R': np.array([0, 1]),
+             'L': np.array([0, -1]),
+             'U': np.array([-1, 0]),
+             'D': np.array([1, 0]),
              }
     position = np.array([1, 1])
     digits = ''
@@ -43,10 +43,10 @@ def day_2_2016_part_2(seq):
               ['5', '6', '7', '8', '9'],
               [None, 'A', 'B', 'C', None],
               [None, None, 'D', None, None]]
-    paths = {'R' : np.array([0, 1]),
-             'L' : np.array([0, -1]),
-             'U' : np.array([-1, 0]),
-             'D' : np.array([1, 0]),
+    paths = {'R': np.array([0, 1]),
+             'L': np.array([0, -1]),
+             'U': np.array([-1, 0]),
+             'D': np.array([1, 0]),
              }
     position = np.array([2, 0])
     digits = ''
@@ -67,6 +67,7 @@ test1 = """ULL
 RRDDD
 LURDL
 UUUUD"""
+
 
 @pytest.mark.parametrize('method, inp, expected', [
     (day_2_2016_part_1, test1, 1985),

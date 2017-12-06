@@ -2,7 +2,7 @@
 
 import pytest
 
-main_inp="""nyot babgr babgr kqtu kqtu kzshonp ylyk psqk
+main_inp = """nyot babgr babgr kqtu kqtu kzshonp ylyk psqk
 iix ewj rojvbkk phrij iix zuajnk tadv givslju ewj bda
 isjur jppvano vctnpjp ngwzdq pxqfrk mnxxes zqwgnd giqh
 ojufqke gpd olzirc jfao cjfh rcivvw pqqpudp

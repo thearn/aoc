@@ -30,6 +30,7 @@ def test_day_2part_1_cases(inp, expected):
 
 # Part 2 ----------------------
 
+
 def day_1_2017_part_2(seq):
     position = 0
     for i, char in enumerate(seq):

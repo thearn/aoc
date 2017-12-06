@@ -46,6 +46,7 @@ def day_1_2017_part_2(n):
 
 # Tests ---------------------------------
 
+
 @pytest.mark.parametrize("method, inp, expected", [
     (day_1_2017_part_1, 1122, 3),
     (day_1_2017_part_1, 1111, 4),
@@ -60,6 +61,7 @@ def day_1_2017_part_2(n):
 ])
 def test_day_1_2017_cases(method, inp, expected):
     assert method(inp) == expected
+
 
 if __name__ == '__main__':
     # show solution
