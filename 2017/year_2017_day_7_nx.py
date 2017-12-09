@@ -9,7 +9,7 @@ Will save both solutions.
 
 import pytest
 import networkx as nx
-from statistics import mode
+from scipy.stats import mode
 from year_2017_day_7 import main_inp, test_1
 
 def get_child_weights(G, name):
@@ -39,7 +39,7 @@ def get_faulty(G, name):
     """Returns the name of any child node whose weight does not match its siblings."""
     neighbors = [i for i in nx.neighbors(G, name)]
     level_weights = get_level_weights(G, name)
-    target_weight = mode(level_weights)
+    target_weight = mode(level_weights)[0]
     for w in level_weights:
         if w != target_weight:
             faulty_idx = level_weights.index(w)
@@ -73,7 +73,7 @@ def day_7_2017_part_2(seq):
         if not has_matching_child_weights(G, node):
             faulty_node = get_faulty(G, node)
             if has_matching_child_weights(G, faulty_node):
-                target_weight = mode(get_level_weights(G, node))
+                target_weight = mode(get_level_weights(G, node))[0]
                 sub_weights = sum(get_level_weights(G, faulty_node))
                 return target_weight - sub_weights
 
