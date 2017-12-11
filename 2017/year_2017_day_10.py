@@ -12,22 +12,32 @@ main_inp = '189,1,111,246,254,2,0,120,215,93,255,50,84,15,94,62'
 
 def day_10_2017_part_1(lengths, inp_size=256):
     """Part 1."""
+    # inputs and length as arrays
     inputs = np.arange(inp_size)
     lengths = np.array([int(i) for i in lengths.split(',')])
     n = inputs.size
+
+    # initialize state
     skip = 0
     position = 0
 
+    # process each length
     for length in lengths:
+        # step is how long each jump is from one point to the next
         step = position + length
+
+        # if block wraps around:
+        # roll the array 'left', reverse block, then shift back
         if step > n:
             idx =  position
             inputs = np.roll(inputs, -idx)
             inputs[:length] = list(reversed(inputs[:length]))
             inputs = np.roll(inputs, idx)
         else:
+            # otherwise, just reverse the block
             inputs[position: step] = list(reversed(inputs[position: step]))
 
+        # increment position and skip length
         position = (position + length + skip) % n
         skip += 1
 
