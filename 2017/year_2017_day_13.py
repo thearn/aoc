@@ -2,7 +2,7 @@
 
 import pytest
 from collections import defaultdict
-
+maxint = 10000000
 main_inp = """0: 3
 1: 2
 2: 4
@@ -47,69 +47,45 @@ main_inp = """0: 3
 90: 17
 96: 20
 98: 24"""
+configs = main_inp.split("\n")
+main_inp = []
 
+"""
+caught: any number congruent to depth mod (2 * (rnge - 1)).
+"""
 
+max_depth = 0
+for step in configs:
+    depth, rnge = step.split(": ")
+    depth, rnge = int(depth), int(rnge)
+    main_inp.append([depth, rnge])
 # Part 1 ---------------------------------
 
 
-def day_13_2017_part_1(seq):
+def day_13_2017_part_1(fw, delay = 0, fail_fast=False):
     """Part 1."""
-    fw = {}
-    configs = seq.split("\n")
-    max_depth = 0
-    for step in configs:
-        depth, rnge = step.split(": ")
-        depth, rnge = int(depth), int(rnge) - 1
-        fw[depth] = rnge
-        if depth > max_depth:
-            max_depth = depth
-    states = [0 for i in range(max_depth + 1)]
-    directions = [-1 for i in range(max_depth + 1)]
 
     severity = 0
-    for time_step in range(1, max_depth + 1):
+    for depth, rnge in fw:
+        if (delay + depth) % (2 * (rnge - 1)) == 0 :
+            if fail_fast:
+                return False
+            severity += depth * rnge
 
-        # update scanner
-        for depth in fw:
-            if states[depth] >= fw[depth] or states[depth] == 0:
-                directions[depth] *= -1
-            states[depth] = states[depth] + directions[depth]
-
-            if states[depth] == 0 and depth == time_step:
-                severity += (fw[depth] + 1) * depth
-
+    if fail_fast and severity == 0:
+        return True
     return severity
 
 # Part 2 --------------------------------
 
 
-def day_13_2017_part_2(seq):
+def day_13_2017_part_2(configs):
     """Part 2."""
-    fw = {}
-    configs = seq.split("\n")
-    max_depth = 0
-    for step in configs:
-        depth, rnge = step.split(": ")
-        depth, rnge = int(depth), int(rnge) - 1
-        fw[depth] = rnge
-        if depth > max_depth:
-            max_depth = depth
-    states = [0 for i in range(max_depth + 1)]
-    directions = [-1 for i in range(max_depth + 1)]
-
-    severity = 0
-    for time_step in range(1, max_depth + 1):
-
-        # update scanner
-        for depth in fw:
-            if states[depth] >= fw[depth] or states[depth] == 0:
-                directions[depth] *= -1
-            states[depth] = states[depth] + directions[depth]
-
-            if states[depth] == 0 and depth == time_step:
-                severity += (fw[depth] + 1) * depth
-
-    return severity
+    i = 0
+    for i in range(maxint):
+        if day_13_2017_part_1(configs, delay=i, fail_fast=True):
+            return i
+        i += 1
 
 
 # Tests ---------------------------------
@@ -119,6 +95,14 @@ test_1 = """0: 3
 1: 2
 4: 4
 6: 4"""
+configs = test_1.split("\n")
+test_1 = []
+
+max_depth = 0
+for step in configs:
+    depth, rnge = step.split(": ")
+    depth, rnge = int(depth), int(rnge)
+    test_1.append([depth, rnge])
 @pytest.mark.parametrize('method, inp, expected', [
     (day_13_2017_part_1, test_1, 24),
     (day_13_2017_part_2, test_1, 10),
@@ -131,7 +115,7 @@ def test_day_13_2017_cases(method, inp, expected):
 if __name__ == '__main__':
     # show solution
     print('day_13_2017_part_1 solution:', day_13_2017_part_1(main_inp))
-    #print('day_13_2017_part_2 solution:', day_13_2017_part_2(main_inp))
+    print('day_13_2017_part_2 solution:', day_13_2017_part_2(main_inp))
 
     # run verification tests
     pytest.main(['-x', '-l', __file__])
