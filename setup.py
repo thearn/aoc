@@ -4,6 +4,7 @@ from shutil import move
 import os
 
 # build and move cythonized files manually
+# easier than trying to fit everything into a module distutils style
 to_build = []
 to_move = {}
 for root, dirs, files in os.walk(".", topdown=False):
@@ -16,7 +17,6 @@ for root, dirs, files in os.walk(".", topdown=False):
 
 
 extensions = [Extension(name, [fpath]) for name, fpath in to_build]
-
 setup(
     ext_modules = cythonize(extensions)
 )
