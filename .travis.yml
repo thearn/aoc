@@ -7,7 +7,8 @@ notifications:
   email: false
 
 install:
-  - pip install numpy scipy networkx
+  - pip install numpy scipy networkx cython
+  - python setup.py build_ext --inplace
 
 script:
   - pytest -l .
